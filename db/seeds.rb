@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+3.times do |i|
+  record = { date: Date.today,
+             title: "Title",
+             amount: rand(0..100).to_i }
+  Record.create(record)
+end
+
+3.times do |i|
+  record = { date: Date.today,
+             title: "Title",
+             amount: rand(-100..0).to_i }
+  Record.create(record)
+end
