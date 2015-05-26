@@ -6,6 +6,12 @@ var Records = React.createClass({
   getDefaultProps: function() {
     return { records: [] };
   },
+
+  addRecord: function(record) {
+    var records = this.state.records.slice();
+    records.push(record);
+    this.setState({ records: records });
+  },
   
   render: function() {
     return(
@@ -13,6 +19,7 @@ var Records = React.createClass({
         <h2 className='title'>
           Records
         </h2>
+        <RecordForm handleNewRecord={this.addRecord} />
         <table className='table table-bordered'>
           <thead>
             <tr>
