@@ -94,10 +94,6 @@ var Record = React.createClass({
   },
   
   render: function() {
-    return(
-      <div>
-        {this.renderedRecord()}
-      </div>
-    );
+    return this.renderedRecord();
   }
 });
