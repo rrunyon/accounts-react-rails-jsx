@@ -24,7 +24,7 @@ class RecordsController < ApplicationController
   end
 
   def destroy
-    @record.destroy
+    current_record.destroy
     head :no_content
   end
 
