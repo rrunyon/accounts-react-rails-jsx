@@ -47,7 +47,7 @@ var Records = React.createClass({
   balance: function() {
     return this.debits() + this.credits();
   },
-  
+
   render: function() {
     return(
       <div className='records'>
@@ -70,11 +70,15 @@ var Records = React.createClass({
             </tr>
           </thead>
           <tbody>
-            {this.state.records.map(function(record) {
-              return <Record key={record.id} record={record}
-                             handleDeleteRecord={this.deleteRecord}
-                             handleEditRecord={this.updateRecord} />
-             }.bind(this))}
+            {this.state.records.map(
+              function(record) {
+                return (
+                  <Record key={record.id} record={record}
+                          handleDeleteRecord={this.deleteRecord}
+                          handleEditRecord={this.updateRecord} />
+                );
+              }, this)
+            }
           </tbody>
         </table>
       </div>
